@@ -1,0 +1,29 @@
+.navConteiner{
+    padding: 0%;
+    margin: 0%;
+    padding-right: 20px;
+}
+
+.navConteinerMov {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.btnNav {
+    color: rgb(64, 49, 39);
+    background-color: rgba(252, 249, 248, 0.2);
+  }
+
+  @media (max-width: 700.98px) {
+    .form-control{
+      display: none;
+    }
+
+    .btnNav{
+      display: none;
+    }
+  }
+  
+  
