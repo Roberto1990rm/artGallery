@@ -56,8 +56,8 @@
         <div class="card-body1 card-content">
             <h5 class="card-title">Título de la obra de arte</h5>
             <p class="card-subtitle mb-2 text-muted">Año: 2023 </p>
-            
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. At delectus modi iste ducimus nesciunt animi veritatis omnis quaerat reiciendis necessitatibus? Nihil sint voluptates incidunt consequuntur est, quis aut natus. Enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis eligendi nulla aliquid amet laboriosam, est tempora repellendus enim at ea. Harum hic placeat assumenda fugiat eveniet ab aut. Exercitationem, incidunt.</p>
+            <p class="description-scroll">primera
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. At delectus modi iste ducimus nesciunt animi veritatis omnis quaerat reiciendis necessitatibus? Nihil sint voluptates incidunt consequuntur est, quis aut natus. Enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis eligendi nulla aliquid amet laboriosam, est tempora repellendus enim at ea. Harum hic placeat assumenda fugiat eveniet ab aut. Exercitationem, incidunt.</p>
         </div>
     </div>
   </div>
@@ -66,12 +66,16 @@
   @foreach ($pinturas as $pintura)
 
   <div class="card">
-    <img src="" alt="Imagen" style="width: 250px; height: 250px;">
-    <div class="card-body" style="overflow-y: scroll; height: 200px;">
-        <h5 class="card-title">{{ $pintura['nombre'] }}</h5>
-        <p class="card-subtitle mb-2 text-muted">Año: {{ $pintura['año'] }}</p>
-        <p class="card-text"></p>
+    
+    <img src="{{ $pintura['imagen'] }}" alt="Imagen" style="width: 100%; height: 250px;">
+    <p class="card-subtitle mb-2 text-muted" style="text-align: center; padding-top: 5px;">Año: {{ $pintura['año'] }}</p>
+    <h5 class="card-title" style="margin-bottom: -30px;">{{ $pintura['nombre'] }}</h5>
+    <div class="card-body" style="overflow-y: scroll; height: 200px; margin-bottom:10px;">
+        <p class="description-scroll">{{ $pintura['descripcion'] }}</p>
+        
     </div>
+        <p class="card-text" style="text-align: center;" >{{ $pintura['precio'] }}</p>
+        <p class="card-text" style="text-align: center;" >{{ $pintura['estado'] }}</p>
 </div>
 @endforeach
   </div>
