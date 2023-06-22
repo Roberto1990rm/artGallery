@@ -95,15 +95,22 @@ var canvasDots = function() {
       dot.animate();
     }
 
+    section.onmouseenter = function(parameter) {
+      setInterval(createDots, 1000/30);
+    };
+
     section.onmousemove = function(parameter) {
       mousePosition.x = parameter.pageX - section.offsetLeft;
       mousePosition.y = parameter.pageY - section.offsetTop;
     };
 
+    section.onmouseleave = function(parameter) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      dots.array = [];
+    };
+
     mousePosition.x = section.offsetWidth / 2;
     mousePosition.y = section.offsetHeight / 2;
-
-    setInterval(createDots, 1000/30);
   }
 };
 

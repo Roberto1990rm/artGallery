@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/d0a3551360.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{{ asset('css/globalStyles.css')}}">
     <link rel="stylesheet" href="{{ asset('css/home.css')}}">
     <link rel="stylesheet" href="{{ asset('css/navbar.css')}}">
     <link rel="stylesheet" href="{{ asset('css/footer.css')}}">
     <link rel="stylesheet" href="{{ asset('css/sectionCenter.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/cards.css')}}">
     <title>JoséRomán</title>
     
 </head>
@@ -49,14 +49,34 @@
     </nav>
   </div>
 
-  <ul>
-  
- @foreach ($pinturas as $pintura)
+  <div class="bg-white" style="color: white;">
+  <div class="card-container1">
+    <div class="card full-width-card card-outside-loop">
+        <img src="{{ asset('/img/pintura1.png') }}" alt="Imagen" style="width: 100%; height: 500px;">
+        <div class="card-body1 card-content">
+            <h5 class="card-title">Título de la obra de arte</h5>
+            <p class="card-subtitle mb-2 text-muted">Año: 2023 </p>
+            
+            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. At delectus modi iste ducimus nesciunt animi veritatis omnis quaerat reiciendis necessitatibus? Nihil sint voluptates incidunt consequuntur est, quis aut natus. Enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis eligendi nulla aliquid amet laboriosam, est tempora repellendus enim at ea. Harum hic placeat assumenda fugiat eveniet ab aut. Exercitationem, incidunt.</p>
+        </div>
+    </div>
+  </div>
 
- <li>{{ $pintura["nombre"] }} {{ $pintura["año"] }} </li>
-     
- @endforeach
-  </ul>
+  <div class="card-container">
+  @foreach ($pinturas as $pintura)
+
+  <div class="card">
+    <img src="" alt="Imagen" style="width: 250px; height: 250px;">
+    <div class="card-body" style="overflow-y: scroll; height: 200px;">
+        <h5 class="card-title">{{ $pintura['nombre'] }}</h5>
+        <p class="card-subtitle mb-2 text-muted">Año: {{ $pintura['año'] }}</p>
+        <p class="card-text"></p>
+    </div>
+</div>
+@endforeach
+  </div>
+</div>
+
     <footer class="footer">
       <div class="container">
         <div class="row">
@@ -64,7 +84,7 @@
             <h3>Social Media</h3>
             <ul class="social-icons">
               <li><a href="https://www.facebook.com/tu_perfil_de_facebook" class="fab fa-facebook" target="_blank"></a></li>
-              <li><a href="https://www.instagram.com/tu_perfil_de_instagram" class="fab fa-instagram" target="_blank"></a></li>
+              <li><a href="https://www.instagram.com/regulero13/" class="fab fa-instagram" target="_blank"></a></li>
               <li><a href="https://www.linkedin.com/in/tu_perfil_de_linkedin" class="fab fa-linkedin" target="_blank"></a></li>
             </ul> 
           </div>

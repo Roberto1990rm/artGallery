@@ -59,7 +59,7 @@
       <h2 style="text-align: center;">Sculptures</h2>
     </div>
     <div>
-      <a href="ruta-de-la-imagen-pintura">
+      <a href="{{ route('index') }}">
         <img src="{{ asset('img/pintura.png')}}" class="imgCenter1" alt="">
       </a>
       <h2 style="text-align:center; padding-top: 57px">Paintings</h2>
@@ -78,7 +78,7 @@
             <h3>Social Media</h3>
             <ul class="social-icons">
               <li><a href="https://www.facebook.com/tu_perfil_de_facebook" class="fab fa-facebook" target="_blank"></a></li>
-              <li><a href="https://www.instagram.com/tu_perfil_de_instagram" class="fab fa-instagram" target="_blank"></a></li>
+              <li><a href="https://www.instagram.com/regulero13/" class="fab fa-instagram" target="_blank"></a></li>
               <li><a href="https://www.linkedin.com/in/tu_perfil_de_linkedin" class="fab fa-linkedin" target="_blank"></a></li>
             </ul> 
           </div>
