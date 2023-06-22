@@ -26,7 +26,7 @@
             <a class="navbar-brand" href="{{ route('Home') }}"><img src="{{ asset('img/Roman1.png')}}" style="opacity: 0.85;" alt="IconRoman"  width="175px"></a>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link active" style="color:rgb(50, 49, 49);" aria-current="page" href="#">Home</a>
+                <a class="nav-link active" style="color:rgb(50, 49, 49);" aria-current="page" href="{{ route('Home') }}">Home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#">About Román</a>
@@ -52,7 +52,8 @@
     </nav>
   </div>
   
-    
+  
+
     <div class="content">
       @yield('content')
     </div>
@@ -88,7 +89,7 @@
               <li><a href="#">Products</a></li>
               <li><a href="#">Services</a></li>
               <li><a href="#">About Us</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="{{ route('contact') }}">Contact</a></li>
             </ul>
           </div>
         </div>
