@@ -16,19 +16,17 @@
 </head>
 <body>
 
-  <div class="navConteinerMov">
-    <nav class="navbar navbar-expand">
-        <div class="navConteiner container-fluid">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <a class="navbar-brand" href="#"><img src="{{ asset('img/Roman1.png')}}" style="opacity: 0.85;" alt="IconRoman"  width="175px"></a>
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" style="color:rgb(50, 49, 49);" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
+  <body>
+    <div class="navConteinerMov">
+        <nav class="navbar navbar-expand">
+            <div class="navConteiner container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <a class="navbar-brand" href="{{ route('Home') }}"><img src="{{ asset('img/Roman1.png')}}" style="opacity: 0.85;" alt="IconRoman" width="175px"></a>
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
                 <a class="nav-link" href="#">About Román</a>
               </li>
               <li class="nav-item dropdown">
@@ -37,7 +35,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="#">Sculpture</a></li>
-                  <li><a class="dropdown-item" href="#">Paintings</a></li>
+                  <li><a class="dropdown-item" href="{{ route ('index')}}">Paintings</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Something else</a></li>
                 </ul>
@@ -54,9 +52,22 @@
   
  
   <div class="centerSection">
-    <img src="{{ asset('img/esculturaCenter.png')}}" class="imgCenter" alt="">
-    <img src="{{ asset('img/pintura.png')}}"   class="imgCenter1" alt="">
+    <div>
+      <a href="ruta-de-la-imagen-escultura">
+        <img src="{{ asset('img/esculturaCenter.png')}}" class="imgCenter" alt="">
+      </a>
+      <h2 style="text-align: center;">Sculptures</h2>
+    </div>
+    <div>
+      <a href="ruta-de-la-imagen-pintura">
+        <img src="{{ asset('img/pintura.png')}}" class="imgCenter1" alt="">
+      </a>
+      <h2 style="text-align:center; padding-top: 57px">Paintings</h2>
+    </div>
     <script src="{{ asset('js/home.js') }}"></script>
+  </div>
+  
+  <script src="{{ asset('js/home.js') }}"></script>
   </div>
 
 

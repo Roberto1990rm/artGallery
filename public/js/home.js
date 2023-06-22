@@ -33,24 +33,24 @@ var canvasDots = function() {
     function Dot(){
       this.x = Math.random() * canvas.width;
       this.y = Math.random() * canvas.height;
-  
+
       this.vx = -0.5 + Math.random();
       this.vy = -0.5 + Math.random();
-  
+
       this.radius = Math.random();
     }
-  
+
     Dot.prototype = {
       create: function(){
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
         ctx.fill();
       },
-  
+
       animate: function(){
         for(var i = 0; i < dots.nb; i++){
           var dot = dots.array[i];
-  
+
           if(dot.y < 0 || dot.y > canvas.height){
             dot.vx = dot.vx;
             dot.vy = -dot.vy;
@@ -63,13 +63,13 @@ var canvasDots = function() {
           dot.y += dot.vy;
         }
       },
-  
+
       line: function(){
         for(var i = 0; i < dots.nb; i++){
           for(var j = 0; j < dots.nb; j++){
             var i_dot = dots.array[i];
             var j_dot = dots.array[j];
-  
+
             if((i_dot.x - j_dot.x) < dots.distance && (i_dot.y - j_dot.y) < dots.distance && (i_dot.x - j_dot.x) > -dots.distance && (i_dot.y - j_dot.y) > -dots.distance){
               if((i_dot.x - mousePosition.x) < dots.d_radius && (i_dot.y - mousePosition.y) < dots.d_radius && (i_dot.x - mousePosition.x) > -dots.d_radius && (i_dot.y - mousePosition.y) > -dots.d_radius){
                 ctx.beginPath();
@@ -83,7 +83,7 @@ var canvasDots = function() {
         }
       }
     };
-  
+
     function createDots(){
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       for(var i = 0; i < dots.nb; i++){
@@ -94,8 +94,8 @@ var canvasDots = function() {
       dot.line();
       dot.animate();
     }
-  
-   window.onmousemove = function(parameter) {
+
+    section.onmousemove = function(parameter) {
       mousePosition.x = parameter.pageX - section.offsetLeft;
       mousePosition.y = parameter.pageY - section.offsetTop;
     };

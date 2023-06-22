@@ -1,12 +1,8 @@
-
-
-
-
 .centerSection {
     display: flex;
     justify-content: space-around;
     margin: 0;
-    background-color: rgb(253, 255, 255);
+    background-color: rgb(246, 249, 219);
   }
   
   .imgCenter {
@@ -43,7 +39,7 @@ canvas {
 
 .imgCenter:hover{
     opacity: 0.9;
-    width: 530px;
+    width: 570px;
     filter: drop-shadow(0 0 25px rgba(0, 0, 0, 0.7));
     
 }
@@ -74,6 +70,4 @@ canvas {
       height: auto; /* Ajusta la altura automáticamente */
       margin-bottom: 20px; /* Añade un margen inferior entre las imágenes */
     }
-  
-   
   }
