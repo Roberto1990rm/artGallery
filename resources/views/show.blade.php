@@ -3,7 +3,7 @@
 @section('title', 'Welcome')
 
 @section('content')
-<div class="card-container2">
+<div class="card-container2" style="background-color: white">
     
   
     <div class="card">

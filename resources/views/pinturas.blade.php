@@ -77,6 +77,9 @@
 
   <div class="card">
     
+    <a href="{{ route('pinturas.create') }}">Crear Pintura</a>
+
+
     <img src="{{ $pintura['imagen'] }}" alt="Imagen" style="width: 100%; height: 250px;">
     <p class="card-subtitle mb-2 text-muted" style="text-align: center; padding-top: 5px;">Año: {{ $pintura['año'] }}</p>
     <h5 class="card-title" style="margin-bottom: -20px;">{{ $pintura['nombre'] }}</h5>
@@ -96,6 +99,7 @@
 @endforeach
   </div>
 </div>
+<a href="{{ route('pinturas.create') }}">Crear Pintura</a>
 
     <footer class="footer">
       <div class="container">

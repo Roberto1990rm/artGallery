@@ -18,4 +18,9 @@ class PinturasController extends HomeController
 
         return view('pinturas', ['pinturas' => $pinturas]);
     }
+
+    
+
+    
+
 }

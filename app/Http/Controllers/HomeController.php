@@ -10,10 +10,12 @@ use App\Models\Pintura;
 class HomeController extends Controller
 {
     public function pinturas()
-    {
-        $pinturas = Pintura::all();
-        return view('pinturas', ['pinturas' => $pinturas]);
-    }
+{
+    $pinturas = Pintura::all(); // Obtén los datos de las pinturas desde tu modelo
+
+    return view('pinturas', compact('pinturas'));
+}
+
 
     public function show($id)
 {
@@ -28,6 +30,40 @@ class HomeController extends Controller
     // Pasar los datos de la pintura a la vista
     return view('show', ['pintura' => $pintura]);
 }
+
+public function create()
+    {
+        return view('create');
+    }
+
+    public function store(Request $request)
+{
+    // Validar los datos enviados desde el formulario
+    $validatedData = $request->validate([
+        'name' => 'required|max:30',
+        'año' => 'required|max:5',
+        'precio' => 'required|max:6',
+        'estado' => 'required|max:10',
+        'imagen' => 'required|max:200',
+        'descripcion' => 'required',
+    ]);
+
+    // Crear una nueva instancia del modelo Pintura y asignar los valores
+    $pintura = new Pintura();
+    $pintura->name = $validatedData['name'];
+    $pintura->año = $validatedData['año'];
+    $pintura->precio = $validatedData['precio'];
+    $pintura->estado = $validatedData['estado'];
+    $pintura->imagen = $validatedData['imagen'];
+    $pintura->descripcion = $validatedData['descripcion'];
+
+    // Guardar la pintura en la base de datos
+    $pintura->save();
+
+    // Redireccionar a una página de éxito o a la lista de pinturas
+    return redirect()->route('pinturas')->with('success', 'La pintura se ha creado correctamente');
+}
+
 
     public function storeContact(Request $request)
     {

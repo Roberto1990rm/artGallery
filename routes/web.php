@@ -9,7 +9,8 @@ Route::get('/', function () {
     return view('home');
 })->name('Home');
 
-
+Route::get('/pinturas/create', [HomeController::class, 'create'])->name('pinturas.create');
+Route::post('/pinturas', [PinturasController::class, 'store'])->name('pinturas.store');
 
 Route::get('/pinturas', [PinturasController::class, 'pinturas'])->name('pinturas');
 Route::get('/pinturas/{id}', [PinturasController::class, 'show'])->name('pintura');

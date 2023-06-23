@@ -91,7 +91,9 @@
               <li><a href="{{ route('Home') }}">Home</a></li>
               <li><a href={{ route ('pinturas')}}>Pinturas</a></li>
               <li><a href="#">Esculturas</a></li>
-              <li><a href="#">About Us</a></li>
+              <li><a href="{{ route('pinturas.create') }}">Crear Pintura</a>
+              </li>
+
               <li><a href="{{ route('contact') }}">Contact</a></li>
             </ul>
           </div>
