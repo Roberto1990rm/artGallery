@@ -20,6 +20,8 @@
     </div>
 </div>
 </div>
+@auth
+  
 <div style="display: flex; justify-content: space-around; margin-top: -110px;">
   <a href="{{ route('pinturas.edit', $pintura['id']) }}" class="btn  btn-primary">Editar</a>
   <form action="{{ route('pinturas.destroy', $pintura->id) }}" method="POST">
@@ -28,7 +30,7 @@
     <button type="submit" class="btn btn-danger">Eliminar</button>
   </form>
 </div>
-
+@endauth
 
   
 @endsection
