@@ -13,7 +13,7 @@
       <h2 style="text-align: center;">Sculptures</h2>
     </div>
     <div>
-      <a href="{{ route('index') }}">
+      <a href="{{ route('pinturas') }}">
         <img src="{{ asset('img/pintura.png')}}" class="imgCenter1" alt="">
       </a>
       <h2 style="text-align:center; padding-top: 57px">Paintings</h2>

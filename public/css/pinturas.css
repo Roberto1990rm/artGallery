@@ -1,0 +1,9 @@
+.h1Pinturas {
+    margin-top: -30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: #f1d1bc;
+    font-size: 60px; /* Tamaño del título */
+    text-transform: uppercase; /* Convertir el texto a mayúsculas */
+    letter-spacing: 4px; /* Espaciado entre letras */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Sombra del texto */
+}

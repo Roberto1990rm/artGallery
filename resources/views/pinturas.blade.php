@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="{{ asset('css/navbar.css')}}">
     <link rel="stylesheet" href="{{ asset('css/footer.css')}}">
     <link rel="stylesheet" href="{{ asset('css/sectionCenter.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/pinturas.css')}}">
     <link rel="stylesheet" href="{{ asset('css/cards.css')}}">
     <title>JoséRomán</title>
     
@@ -36,7 +37,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="#">Sculpture</a></li>
-                  <li><a class="dropdown-item" href="{{ route ('index')}}">Paintings<a></li>
+                  <li><a class="dropdown-item" href="{{ route ('pinturas')}}">Paintings<a></li>
 
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Something else</a></li>
@@ -50,8 +51,9 @@
           </div>
         </div>
     </nav>
+    
   </div>
-
+  <h1 class="h1Pinturas" style="text-align: center;">Last Paintings</h1>
   <div class="bg-white" style="color: white;">
   <div class="card-container1">
     <div class="card full-width-card card-outside-loop">
@@ -64,9 +66,11 @@
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. At delectus modi iste ducimus nesciunt animi veritatis omnis quaerat reiciendis necessitatibus? Nihil sint voluptates incidunt consequuntur est, quis aut natus. Enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis eligendi nulla aliquid amet laboriosam, est tempora repellendus enim at ea. Harum hic placeat assumenda fugiat eveniet ab aut. Exercitationem, incidunt.</p>
         </div>
         <p class="card-text" style="text-align: center; margin-bottom: -5px;" >$100</p>
-        <p class="card-text" style="text-align: center;" >En venta</p>
+        <p class="card-text" style="text-align: center;">En venta</p>
     </div>
   </div>
+
+  
 
   <div class="card-container">
   @foreach ($pinturas as $pintura)
@@ -114,9 +118,9 @@
           <div class="col-md-4">
             <h3>Links</h3>
             <ul class="footer-links">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Products</a></li>
-              <li><a href="#">Services</a></li>
+              <li><a href="{{ route('Home') }}">Home</a></li>
+              <li><a href={{ route ('pinturas')}}>Pinturas</a></li>
+              <li><a href="#">Esculturas</a></li>
               <li><a href="#">About Us</a></li>
               <li><a href="{{ route('contact') }}">Contact</a></li>
             </ul>

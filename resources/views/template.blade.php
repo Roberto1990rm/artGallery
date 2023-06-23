@@ -37,7 +37,7 @@
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="#">Sculpture</a></li>
-                  <li><a class="dropdown-item" href="{{ route('index') }}">Paintings</a></li>
+                  <li><a class="dropdown-item" href="{{ route('pinturas') }}">Paintings</a></li>
                   <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Something else</a></li>
                 </ul>
@@ -52,7 +52,7 @@
     </nav>
   </div>
   
-  
+  <div id="searchResults"></div>.
 
     <div class="content">
       @yield('content')
@@ -85,9 +85,9 @@
           <div class="col-md-4">
             <h3>Links</h3>
             <ul class="footer-links">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Products</a></li>
-              <li><a href="#">Services</a></li>
+              <li><a href="{{ route('Home') }}">Home</a></li>
+              <li><a href={{ route ('pinturas')}}>Pinturas</a></li>
+              <li><a href="#">Esculturas</a></li>
               <li><a href="#">About Us</a></li>
               <li><a href="{{ route('contact') }}">Contact</a></li>
             </ul>
@@ -95,7 +95,28 @@
         </div>
       </div>
     </footer>
-    
+
+    <script>function performSearch(query) {
+  // Realiza la lógica de búsqueda aquí
+  // ...
+
+  // Obtén una referencia al contenedor de resultados en la página
+  var searchResultsContainer = document.getElementById('searchResults');
+
+  // Limpia el contenido anterior en el contenedor de resultados
+  searchResultsContainer.innerHTML = '';
+
+  // Itera sobre los resultados y crea elementos HTML para cada resultado
+  results.forEach(function(result) {
+    // Crea un elemento <div> para representar cada resultado
+    var resultElement = document.createElement('div');
+    resultElement.textContent = result.title; // Usa los datos relevantes del resultado
+
+    // Agrega el elemento del resultado al contenedor de resultados
+    searchResultsContainer.appendChild(resultElement);
+  });
+}
+</script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -36,7 +36,17 @@ p {
     border-radius: 40px 30px 20px 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
-    
+}
+
+.card:hover {
+    overflow: hidden;
+    flex-basis: calc(33.33% - 30px);
+    margin: 15px;
+    padding: 20px;
+    background: linear-gradient(to right, #ffffff, #eef1bc, #ffffff);
+    border-radius: 40px 30px 20px 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .card img {
@@ -48,6 +58,14 @@ p {
     background-size: 100%;
     background-size: 400% 400%;
     background: linear-gradient(to right, #ffffff, #f1d1bc, #ffffff);
+    border-radius: 40px 30px 20px 10px;
+}
+
+.full-width-card:hover {
+    flex-basis: 100%;
+    background-size: 100%;
+    background-size: 400% 400%;
+    background: linear-gradient(to right, #ffffff, #eef1bc, #ffffff);
     border-radius: 40px 30px 20px 10px;
 }
 
