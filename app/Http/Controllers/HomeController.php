@@ -15,6 +15,20 @@ class HomeController extends Controller
         return view('pinturas', ['pinturas' => $pinturas]);
     }
 
+    public function show($id)
+{
+    // Obtener los datos de la pintura con el ID proporcionado
+    $pintura = Pintura::find($id);
+
+    // Verificar si la pintura existe
+    if (!$pintura) {
+        abort(404); // Puedes personalizar la respuesta de error como desees
+    }
+
+    // Pasar los datos de la pintura a la vista
+    return view('show', ['pintura' => $pintura]);
+}
+
     public function storeContact(Request $request)
     {
         // Validar los datos del formulario de contacto

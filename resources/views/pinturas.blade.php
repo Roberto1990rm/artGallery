@@ -65,7 +65,7 @@
             <p class="description-scroll">primera
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet consectetur, adipisicing elit. At delectus modi iste ducimus nesciunt animi veritatis omnis quaerat reiciendis necessitatibus? Nihil sint voluptates incidunt consequuntur est, quis aut natus. Enim. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis eligendi nulla aliquid amet laboriosam, est tempora repellendus enim at ea. Harum hic placeat assumenda fugiat eveniet ab aut. Exercitationem, incidunt.</p>
         </div>
-        <p class="card-text" style="text-align: center; margin-bottom: -5px;" >$100</p>
+        <p class="card-text2" style="text-align: center; margin-bottom: -5px;" >$100</p>
         <p class="card-text" style="text-align: center;">En venta</p>
     </div>
   </div>
@@ -86,7 +86,13 @@
     </div>
         <p class="card-text" style="text-align: center;" >{{ $pintura['precio'] }}</p>
         <p class="card-text" style="text-align: center;" >{{ $pintura['estado'] }}</p>
+        <a href="{{ route('pintura', ['id' => $pintura->id]) }}" class="btn btn-primary btn-profesional">
+          <i class="bi bi-arrow-right"></i> Ver más
+        </a>
+        
+
 </div>
+
 @endforeach
   </div>
 </div>

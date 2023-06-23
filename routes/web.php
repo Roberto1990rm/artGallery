@@ -12,6 +12,7 @@ Route::get('/', function () {
 
 
 Route::get('/pinturas', [PinturasController::class, 'pinturas'])->name('pinturas');
+Route::get('/pinturas/{id}', [PinturasController::class, 'show'])->name('pintura');
 
 Route::get('/contact', function () {
     return view('contact');
