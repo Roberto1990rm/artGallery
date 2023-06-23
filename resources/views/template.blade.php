@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/footer.css')}}">
     <link rel="stylesheet" href="{{ asset('css/sectionCenter.css')}}">
     <link rel="stylesheet" href="{{ asset('css/show.css')}}">
-
+    <link rel="stylesheet" href="{{ asset('css/create.css')}}">
     <title>JoséRomán</title>
     
 </head>

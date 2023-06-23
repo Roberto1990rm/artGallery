@@ -77,29 +77,26 @@
 
   <div class="card">
     
-    <a href="{{ route('pinturas.create') }}">Crear Pintura</a>
-
+   
 
     <img src="{{ $pintura['imagen'] }}" alt="Imagen" style="width: 100%; height: 250px;">
     <p class="card-subtitle mb-2 text-muted" style="text-align: center; padding-top: 5px;">Año: {{ $pintura['año'] }}</p>
-    <h5 class="card-title" style="margin-bottom: -20px;">{{ $pintura['nombre'] }}</h5>
+    <h5 class="card-subtitle">{{ $pintura['name'] }}</h5>
     <div class="card-body" style="overflow-y: scroll; height: 200px; margin-bottom:10px;">
         <p class="description-scroll">{{ $pintura['descripcion'] }}</p>
         
     </div>
         <p class="card-text" style="text-align: center;" >{{ $pintura['precio'] }}</p>
         <p class="card-text" style="text-align: center;" >{{ $pintura['estado'] }}</p>
-        <a href="{{ route('pintura', ['id' => $pintura->id]) }}" class="btn btn-primary btn-profesional">
+        <a href="{{ route('pinturas.show', ['id' => $pintura->id]) }}" class="btn btn-primary btn-profesional">
           <i class="bi bi-arrow-right"></i> Ver más
-        </a>
-        
-
+      </a>
 </div>
 
 @endforeach
   </div>
 </div>
-<a href="{{ route('pinturas.create') }}">Crear Pintura</a>
+<a href="{{ route('pinturas.create') }}" style="display: flex; justify-content: center;">Crear Pintura</a>
 
     <footer class="footer">
       <div class="container">

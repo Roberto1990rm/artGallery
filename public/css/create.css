@@ -1,0 +1,12 @@
+
+.content {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .form input[type="text"],
+  .form textarea {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  

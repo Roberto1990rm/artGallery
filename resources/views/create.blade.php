@@ -5,7 +5,7 @@
 @section('content')
 
 
-<form action="{{ route('pinturas.store') }}" method="POST">
+ <form action="{{ route('pinturas.store') }}" method="POST" class="form">
     @csrf
 
     <div>
