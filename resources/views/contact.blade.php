@@ -6,7 +6,7 @@
 <div class=" col-9 d-flex justify-content-center mt-5 pt-4 mb-3" style="background-color: rgb(255, 255, 255); padding: 5px; ">
     <div class="col-12 mb-5 pb-5 pt-5">
         <h2 class="mt-3" style="color: rgb(0, 0, 0)"><b>Contacta con nosotros</b></h2>
-        <form method="POST" action="{{ route('contact.store') }}" class="needs-validation" novalidate>
+        <form method="POST" action="{{ route('contact.storeContact') }}">
 
             @csrf
             <input type="hidden" name="action" value="contact">

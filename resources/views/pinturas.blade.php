@@ -17,24 +17,23 @@
 </head>
 <body>
   <div class="navConteinerMov">
-    <nav class="navbar navbar-expand">
-      <div class="navConteiner container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-light" style="margin-bottom: 20px;">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{{ route('Home') }}"><img src="{{ asset('img/Roman1.png')}}" style="opacity: 0.85;" alt="IconRoman" width="175px"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a class="navbar-brand" href="{{ route('Home') }}"><img src="{{ asset('img/Roman1.png')}}" style="opacity: 0.85;" alt="IconRoman"  width="175px"></a>
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link active" style="color:rgb(50, 49, 49);" aria-current="page" href="{{ route('Home') }}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">About Román</a>
             </li>
+            
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black;">
-                Roman´s Art
-              </a>
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black;">Roman´s Art</a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#">Sculpture</a></li>
                 <li><a class="dropdown-item" href="{{ route('pinturas') }}">Paintings</a></li>
@@ -43,6 +42,9 @@
               </ul>
             </li>
           </ul>
+          
+            <a href="{{ route('contact') }}" style="color: black; padding-right: 5px; text-decoration: none;">Contact</a>
+          
           <form class="d-flex searchtoolbar" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btnNav" type="submit">Search</button>
@@ -50,8 +52,6 @@
           <ul class="navbar-nav ml-auto">
             @guest
             @auth
-              
-            
             <li class="nav-item">
               <a class="nav-link" href="{{ route('register') }}">Private</a>
             </li>
@@ -64,14 +64,10 @@
               <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                 {{ Auth::user()->name }}
               </a>
-  
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ route('logout') }}"
-                   onclick="event.preventDefault();
-                                 document.getElementById('logout-form').submit();">
+                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                   Logout
                 </a>
-  
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                   @csrf
                 </form>

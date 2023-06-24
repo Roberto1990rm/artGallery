@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactController;
@@ -21,16 +20,6 @@ Route::get('/pinturas/{id}', [PinturasController::class, 'show'])
     ->withoutMiddleware(['auth']);
 Route::delete('/pinturas/{id}', [PinturasController::class, 'destroy'])->name('pinturas.destroy');
 
-
-
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
-
-Route::get('/contact/success', function () {
-  return view('contact_success');
-})->name('contact.success');
-
-Route::post('/contact', [HomeController::class, 'storeContact'])->name('contact.store');
-
-
+Route::get('/contact', [PinturasController::class, 'contact'])->name('contact');
+Route::post('/contact', [PinturasController::class, 'storeContact'])->name('contact.storeContact');
+Route::get('/contact/success', [PinturasController::class, 'contactSuccess'])->name('contact_success');
