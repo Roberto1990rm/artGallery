@@ -8,7 +8,10 @@ Route::get('/', function () {
     return view('Home');
 })->name('Home');
 
-Route::get('/pinturas/create', [HomeController::class, 'create'])->name('pinturas.create');
+Route::get('/pinturas/create', [HomeController::class, 'create'])
+    ->name('pinturas.create')
+    ->middleware('auth');
+
 Route::post('/pinturas', [PinturasController::class, 'store'])->name('pinturas.store');
 
 Route::get('/pinturas', [PinturasController::class, 'pinturas'])->name('pinturas')->withoutMiddleware(['auth']);
@@ -23,3 +26,8 @@ Route::delete('/pinturas/{id}', [PinturasController::class, 'destroy'])->name('p
 Route::get('/contact', [PinturasController::class, 'contact'])->name('contact');
 Route::post('/contact', [PinturasController::class, 'storeContact'])->name('contact.storeContact');
 Route::get('/contact/success', [PinturasController::class, 'contactSuccess'])->name('contact_success');
+
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');

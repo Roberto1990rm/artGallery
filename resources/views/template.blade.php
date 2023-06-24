@@ -6,7 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/d0a3551360.js" crossorigin="anonymous"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="{{ asset('css/globalStyles.css')}}">
     <link rel="stylesheet" href="{{ asset('css/home.css')}}">
     <link rel="stylesheet" href="{{ asset('css/navbar.css')}}">
@@ -14,6 +16,8 @@
     <link rel="stylesheet" href="{{ asset('css/sectionCenter.css')}}">
     <link rel="stylesheet" href="{{ asset('css/show.css')}}">
     <link rel="stylesheet" href="{{ asset('css/create.css')}}">
+    <link rel="stylesheet" href="{{ asset('css/about.css')}}">
+    
     <title>JoséRomán</title>
     
 </head>
@@ -21,19 +25,15 @@
 
   <body>
       <div class="navConteinerMov">
-        <nav class="navbar navbar-expand-lg navbar-light ">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="{{ route('Home') }}"><img src="{{ asset('images/Roman1.png')}}" style="opacity: 0.85;" alt="IconRoman" width="175px"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link active" style="color:rgb(50, 49, 49);" aria-current="page" href="{{ route('Home') }}">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">About Román</a>
+        <div class="navConteinerMov">
+          <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{{ route('Home') }}"><img src="{{ asset('images/Roman1.png')}}" style="opacity: 0.85;" alt="IconRoman" width="175px"></a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black;">Roman´s Art</a>
@@ -44,42 +44,51 @@
                     <li><a class="dropdown-item" href="#">Something else</a></li>
                   </ul>
                 </li>
-              </ul>
-              <a href="{{ route('contact') }}" style="color: black; padding-right: 5px; text-decoration: none;">Contact</a>
-              <form class="d-flex searchtoolbar" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btnNav" type="submit">Search</button>
-              </form>
-              <ul class="navbar-nav ml-auto">
-                @guest
-                @auth
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('register') }}">Private</a>
-                </li>
-                @endauth
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ route('login') }}">Area Privada</a>
-                </li>
-                @else
-                <li class="nav-item dropdown">
-                  <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                    {{ Auth::user()->name }}
-                  </a>
-                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                      Logout
+                  
+                  <li class="nav-item" style="margin-top: 8px; padding-right:5px;">
+                    <a href="{{ route('about') }}" class="link-no-decoration">About Román</a>
+                  </li>
+                    <li class="nav-item" style="margin-top: 8px;">
+                      <a href="{{ route('contact') }}" style="color: black; padding-right: 8px; text-decoration: none;">Contact</a>
+                    </li>
+                </ul>
+                <a class="nav-link active" style="color:rgb(50, 49, 49); padding-right: 5px;" aria-current="page" href="{{ route('Home') }}">Home</a>
+                
+                
+                <form class="d-flex searchtoolbar" role="search">
+                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btnNav" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav ml-auto">
+                  @guest
+                  @auth
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('register') }}">Private</a>
+                  </li>
+                  @endauth
+                  <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">Area Privada</a>
+                  </li>
+                  @else
+                  <li class="nav-item dropdown">
+                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                      {{ Auth::user()->name }}
                     </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                      @csrf
-                    </form>
-                  </div>
-                </li>
-                @endguest
-              </ul>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        Logout
+                      </a>
+                      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                      </form>
+                    </div>
+                  </li>
+                  @endguest
+                </ul>
+              </div>
             </div>
-          </div>
-        </nav>
-      </div>
+          </nav>
+        </div>
     
       
   
@@ -118,8 +127,7 @@
               <li><a href="{{ route('Home') }}">Home</a></li>
               <li><a href={{ route ('pinturas')}}>Pinturas</a></li>
               <li><a href="#">Esculturas</a></li>
-              
-
+              <li><a href="#">About Us</a></li>
               <li><a href="{{ route('contact') }}">Contact</a></li>
             </ul>
           </div>

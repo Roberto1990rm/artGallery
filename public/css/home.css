@@ -10,3 +10,10 @@
     background-position: 0% 50%;
   }
 }
+
+.link-no-decoration {
+  text-decoration: none !important;
+  color: inherit !important;
+  outline: none !important;
+  border: none !important;
+}

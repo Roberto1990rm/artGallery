@@ -17,7 +17,7 @@
 </head>
 <body>
   <div class="navConteinerMov">
-    <nav class="navbar navbar-expand-lg navbar-light" style="margin-bottom: 20px;">
+    <nav class="navbar navbar-expand-lg navbar-light ">
       <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('Home') }}"><img src="{{ asset('images/Roman1.png')}}" style="opacity: 0.85;" alt="IconRoman" width="175px"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,25 +25,26 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" style="color:rgb(50, 49, 49);" aria-current="page" href="{{ route('Home') }}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About Román</a>
-            </li>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black;">Roman´s Art</a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="#">Sculpture</a></li>
+              <li><a class="dropdown-item" href="{{ route('pinturas') }}">Paintings</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else</a></li>
+            </ul>
+          </li>
             
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:black;">Roman´s Art</a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Sculpture</a></li>
-                <li><a class="dropdown-item" href="{{ route('pinturas') }}">Paintings</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Something else</a></li>
-              </ul>
+            <li class="nav-item" style="margin-top: 8px; padding-right:5px;">
+              <a href="{{ route('about') }}" class="link-no-decoration">About Román</a>
             </li>
+              <li class="nav-item" style="margin-top: 8px;">
+                <a href="{{ route('contact') }}" style="color: black; padding-right: 8px; text-decoration: none;">Contact</a>
+              </li>
           </ul>
+          <a class="nav-link active" style="color:rgb(50, 49, 49); padding-right: 5px;" aria-current="page" href="{{ route('Home') }}">Home</a>
           
-            <a href="{{ route('contact') }}" style="color: black; padding-right: 5px; text-decoration: none;">Contact</a>
           
           <form class="d-flex searchtoolbar" role="search">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
