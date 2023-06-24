@@ -19,7 +19,7 @@
   <div class="navConteinerMov">
     <nav class="navbar navbar-expand-lg navbar-light" style="margin-bottom: 20px;">
       <div class="container-fluid">
-        <a class="navbar-brand" href="{{ route('Home') }}"><img src="{{ asset('img/Roman1.png')}}" style="opacity: 0.85;" alt="IconRoman" width="175px"></a>
+        <a class="navbar-brand" href="{{ route('Home') }}"><img src="{{ asset('images/Roman1.png')}}" style="opacity: 0.85;" alt="IconRoman" width="175px"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -85,7 +85,7 @@
   <div class="bg-white" style="color: white;">
   <div class="card-container1">
     <div class="card full-width-card card-outside-loop">
-        <img src="{{ asset('/img/pintura1.png') }}" alt="Imagen" style="width: 100%; height: 500px;">
+        <img src="{{ asset('/images/pintura1.png') }}" alt="Imagen" style="width: 100%; height: 500px;">
         <div class="card-body1 card-content">
             
             <p class="card-subtitle mb-2 text-muted" style="text-align: center;">Año: 2023 </p>
@@ -107,7 +107,13 @@
     
    
 
-    <img src="{{ $pintura['imagen'] }}" alt="Imagen" style="width: 100%; height: 250px;">
+    <img src="{{ asset($pintura->imagen) }}" alt="Pintura">
+
+
+
+
+
+
     <p class="card-subtitle mb-2 text-muted" style="text-align: center; padding-top: 5px;">Año: {{ $pintura['año'] }}</p>
     <h5 class="card-subtitle">{{ $pintura['name'] }}</h5>
     <div class="card-body" style="overflow-y: scroll; height: 200px; margin-bottom:10px;">

@@ -4,8 +4,7 @@
 
 @section('content')
 
-
- <form action="{{ route('pinturas.store') }}" method="POST" class="form">
+<form action="{{ route('pinturas.store') }}" method="POST" class="form" enctype="multipart/form-data">
     @csrf
 
     <div>
@@ -29,8 +28,8 @@
     </div>
 
     <div>
-        <label for="imagen">URL de la imagen:</label>
-        <input type="text" name="imagen" id="imagen" maxlength="200" required>
+        <label for="imagen">Imagen:</label>
+        <input type="file" name="imagen" id="imagen" required>
     </div>
 
     <div>
@@ -41,7 +40,4 @@
     <button type="submit">Guardar</button>
 </form>
 
-
-
 @endsection
-  

@@ -6,7 +6,7 @@
 <div class="card-container2 col-12" style="background-color: white; height: 1000px;">
   
     <div class="card col-11 col-md-8 mx-auto" style="height: 800px">
-      <img src="{{ $pintura['imagen'] }}" alt="Imagen" style="width: 100%; height: 60%;">
+      <img src="{{ asset($pintura->imagen) }}" alt="Imagen" height="500px;">
       <p class="card-subtitle mb-2 text-muted" style="text-align: center; padding-top: 5px;">Año: {{ $pintura['año'] }}</p>
       <h5 class="card-subtitle" style="display: flex; justify-content: center;">{{ $pintura['name'] }}</h5>
       <div class="card-body" style="overflow-y: scroll; height: 200px; margin-bottom:10px;">

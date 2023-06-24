@@ -4,7 +4,7 @@
 
 @section('content')
 
-<form action="{{ route('pinturas.update', $pintura->id) }}" method="POST" class="form">
+<form action="{{ route('pinturas.update', $pintura->id) }}" method="POST" class="form" enctype="multipart/form-data">
 
     @csrf
     @method('PUT')
@@ -30,8 +30,13 @@
     </div>
 
     <div>
-        <label for="imagen">URL de la imagen:</label>
-        <input type="text" name="imagen" id="imagen" maxlength="200" required value="{{ $pintura->imagen }}">
+        <label for="imagen_actual">Imagen actual:</label>
+        <img src="{{ asset($pintura->imagen) }}" alt="Imagen actual" width="250px;">
+    </div>
+
+    <div>
+        <label for="nueva_imagen">Nueva imagen:</label>
+        <input type="file" name="nueva_imagen" id="nueva_imagen">
     </div>
 
     <div>
