@@ -1,15 +1,19 @@
 .h1Pinturas {
     margin-top: -30px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    color: #f1d1bc;
+    color: rgb(217, 214, 214);
     font-size: 60px; /* Tamaño del título */
     text-transform: uppercase; /* Convertir el texto a mayúsculas */
     letter-spacing: 4px; /* Espaciado entre letras */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Sombra del texto */
-}
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    margin-bottom: 60px;
+
+  }
+
+
 
 .btn-profesional {
-    background-color: #f1d1bc;
+    background-color: #bcd8f1;
     color: #0a0909;
     padding: 10px 20px;
     border: none;
@@ -20,6 +24,6 @@
   }
   
   .btn-profesional:hover {
-    background-color: #aab300;
+    background-color: #001eb3;
   }
   

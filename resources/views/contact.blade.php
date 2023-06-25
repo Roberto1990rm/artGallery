@@ -1,11 +1,11 @@
-@extends('template')
+@extends('layouts.app')
 
 @section('title', 'Contacta con nosotros')
 
 @section('content')
-<div class=" col-9 d-flex justify-content-center mt-5 pt-4 mb-3" style="background-color: rgb(255, 255, 255); padding: 5px; ">
-    <div class="col-12 mb-5 pb-5 pt-5">
-        <h2 class="mt-3" style="color: rgb(0, 0, 0)"><b>Contacta con nosotros</b></h2>
+<div class=" col-9 d-flex justify-content-center mt-2 pt-2 mb-3" style="background-color: rgb(255, 255, 255); padding: 5px;">
+    <div class="col-12 mb-5 pb-5 pt-2">
+        <h2 class="mt-3" style="color: rgb(0, 0, 0); margin-bottom:40px; text-align: center;"><b>Contacta con nosotros</b></h2>
         <form method="POST" action="{{ route('contact.storeContact') }}">
 
             @csrf
@@ -39,8 +39,8 @@
                 </div>
             </div>
             <div class="row mb-3">
-                <div class="col-12 text-center">
-                    <button type="submit" class="btn btn-warning mx-auto">Enviar</button>
+                <div class="col-12 text-center" style="margin-top: 30px;">
+                    <button type="submit" class="btn btn-primary mx-auto">Enviar</button>
                 </div>
             </div>
         </form>
@@ -72,4 +72,5 @@
         });
     })();
 </script>
+
 @endsection

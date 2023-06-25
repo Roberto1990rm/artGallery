@@ -1,8 +1,8 @@
 @extends('template')
 
 @section('content')
-<div class="container" style="margin-bottom: 100px; margin-top: -100px;">
-    <div class="row justify-content-center">
+<div class="container" style="margin-bottom: 100px; margin-top: -100px; padding-left: -20 px; overflow: hidden;">
+    <div class="row justify-content-center" style=" margin-left: -100px; padding: 100px;">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>

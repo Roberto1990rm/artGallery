@@ -16,7 +16,8 @@ Route::post('/pinturas', [PinturasController::class, 'store'])->name('pinturas.s
 
 Route::get('/pinturas', [PinturasController::class, 'pinturas'])->name('pinturas')->withoutMiddleware(['auth']);
 
-Route::get('/pinturas/{id}/edit', [PinturasController::class, 'edit'])->name('pinturas.edit');
+Route::get('/pinturas/{id}/edit', [PinturasController::class, 'edit'])->name('pinturas.edit')
+->middleware('auth');
 Route::put('/pinturas/{id}', [PinturasController::class, 'update'])->name('pinturas.update');
 Route::get('/pinturas/{id}', [PinturasController::class, 'show'])
     ->name('pinturas.show')

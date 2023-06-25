@@ -20,7 +20,7 @@
       <a href="{{ route('pinturas') }}">
         <img src="{{ asset('images/pintura.png')}}" class="imgCenter1" alt="">
       </a>
-      <h2 style="text-align:center; padding-top: 57px">Paintings</h2>
+      <h2 style="text-align:center; padding-top: 26px">Paintings</h2>
     </div>
     <script src="{{ asset('js/home.js') }}"></script>
   </div>

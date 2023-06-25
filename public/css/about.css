@@ -18,3 +18,46 @@
             color: #fff;
             transition: opacity 0.3s ease-in-out;
         }
+
+
+        .card1 {
+            position: relative;
+        }
+
+        .card1-img-top {
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+            z-index: 1;
+        }
+
+        .arrow-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 50px;
+            text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+
+
+        
+
+
+
+
+        
+        @media (max-width: 767px) {
+        .fas{
+            display: none;
+        }
+
+        .content{
+            margin-top: -190px;
+        }
+
+
+
+        
+    }
+

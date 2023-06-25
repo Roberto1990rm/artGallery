@@ -1,4 +1,4 @@
-@extends('template')
+@extends('layouts.app')
 
 @section('title', 'Editar Pintura')
 
@@ -31,7 +31,7 @@
 
     <div>
         <label for="imagen_actual">Imagen actual:</label>
-        <img src="{{ asset($pintura->imagen) }}" alt="Imagen actual" width="250px;">
+        <img src="{{ asset($pintura->imagen) }}" alt="Imagen actual" width="120px;" style="margin: 20px;">
     </div>
 
     <div>
@@ -40,7 +40,7 @@
     </div>
 
     <div>
-        <label for="descripcion">Descripción:</label>
+        <label for="descripcion" style="margin-top: 20px;">Descripción:</label>
         <textarea name="descripcion" id="descripcion" required>{{ $pintura->descripcion }}</textarea>
     </div>
 

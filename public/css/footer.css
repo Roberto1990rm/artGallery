@@ -1,8 +1,10 @@
 .footer {
+  margin-top: 20px;
     width: 100%;
     padding: 40px 0;
     color: #333;
     text-align: center;
+    background-color: rgba(217, 214, 214, 0.3);
   } 
   
   .footer h3 {
